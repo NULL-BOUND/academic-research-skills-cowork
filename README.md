@@ -1,62 +1,67 @@
-# Academic Research Skills (ARS) — Cowork 移植版
+# Academic Research Skills (ARS) — Cowork Edition
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-**Academic Research Skills (ARS)** 是一个面向学术研究的全套技能套件，覆盖从文献调研到论文发表的完整流程。
+[English](README.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
 
-本项目是 [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) 的 **Cowork 移植版**。
+**Academic Research Skills (ARS)** is a comprehensive suite of AI-assisted skills for academic research, covering the entire pipeline from literature review to paper publication.
 
-## 与原版的区别
+This project is a **Cowork port** of [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills), originally built for Claude Code CLI.
 
-| 特性 | 原版（Claude Code） | 本移植版（Cowork） |
-|------|-------------------|-------------------|
-| 平台 | Claude Code CLI / VS Code / JetBrains | **Cowork 桌面应用** |
-| 技能安装 | 软链接到 `.claude/skills/` | `save_skill` 写入 SKILL.md |
-| 文件结构 | 多文件（agents/ + references/ + templates/） | **单文件内联**（全部内容嵌入 SKILL.md） |
-| 跨对话运行 | ✅ 依赖项目目录 | ✅ 自包含，无外部依赖 |
-| CLI 集成 | hooks, commands, scripts | 不适用（Cowork 无对应机制） |
-| 版本 | v3.13.0 | v3.13.0（同步原版最新） |
+## Comparison with the Original
 
-## 已安装技能
+| Feature | Original (Claude Code) | This Port (Cowork) |
+|---------|----------------------|-------------------|
+| Platform | Claude Code CLI / VS Code / JetBrains | **Cowork Desktop App** |
+| Skill install | Symlink to `.claude/skills/` | `save_skill` into single SKILL.md |
+| File structure | Multi-file (agents/ + references/ + templates/) | **Single-file inline** (all content embedded into SKILL.md) |
+| Cross-session | ✅ Depends on project dir | ✅ Self-contained, no external deps |
+| CLI integration | hooks, commands, scripts | N/A (Cowork has no equivalent) |
+| Version | v3.13.0 | v3.13.0 (synchronized with original) |
 
-| 技能 | Agent | 模式 | 说明 |
-|------|-------|------|------|
-| `deep-research` | 13 | 8 种 | 深度研究、文献综述、系统综述、事实核查等 |
-| `academic-paper` | 12 | 11 种 | 论文写作、规划、修订、引用检查、AI 披露等 |
-| `academic-paper-reviewer` | 7 | 4 种 | 同行评审、重审、方法聚焦、校准 |
-| `academic-pipeline` | 5 | 10 阶段 | 研究→写作→审稿→投稿全流程编排 |
+> The repository retains the complete original file structure (agents/, references/, shared/, scripts/, etc.)
+> for reference. The SKILL.md files are self-contained inline versions optimized for Cowork.
 
-## Cowork 安装方法
+## Skills Included
 
-在 Cowork 中运行以下命令：
+| Skill | Agents | Modes | Description |
+|-------|--------|-------|-------------|
+| `deep-research` | 13 | 8 | Deep research, literature review, systematic review, fact-check, Socratic dialogue |
+| `academic-paper` | 12 | 11 | Paper writing, planning, revision, citation check, AI disclosure |
+| `academic-paper-reviewer` | 7 | 4 | Peer review, re-review, methodology focus, calibration |
+| `academic-pipeline` | 5 | 10 stages | Research → Write → Review → Submission orchestration |
+
+## How to Install in Cowork
+
+Each skill's `SKILL.md` is self-contained with all agent definitions and key references embedded inline. To install in Cowork:
 
 ```bash
-# 安装 deep-research
+# deep-research
 save_skill --name deep-research --file deep-research/SKILL.md
 
-# 安装 academic-paper
+# academic-paper
 save_skill --name academic-paper --file academic-paper/SKILL.md
 
-# 安装 academic-paper-reviewer
+# academic-paper-reviewer
 save_skill --name academic-paper-reviewer --file academic-paper-reviewer/SKILL.md
 
-# 安装 academic-pipeline
+# academic-pipeline
 save_skill --name academic-pipeline --file academic-pipeline/SKILL.md
 ```
 
-## 使用方法
+## How to Use
 
-在 Cowork 中输入 `/技能名` 启动：
+Enter `/skill_name` in Cowork to launch:
 
-| 命令 | 功能 |
-|------|------|
-| `/deep-research` | 启动深度研究 |
-| `/academic-paper` | 启动论文写作 |
-| `/academic-paper-reviewer` | 启动同行评审 |
-| `/academic-pipeline` | 启动全流程 |
+| Command | Function |
+|---------|----------|
+| `/deep-research` | Start deep research |
+| `/academic-paper` | Start paper writing |
+| `/academic-paper-reviewer` | Start peer review |
+| `/academic-pipeline` | Start full pipeline |
 
-## 致谢
+## Acknowledgements
 
-- 原作者 **Cheng-I Wu** ([@Imbad0202](https://github.com/Imbad0202)) — 原始 ARS 的设计与开发
-- 原仓库: [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
-- 许可证: CC BY-NC 4.0（非商业使用）
+- Original author **Cheng-I Wu** ([@Imbad0202](https://github.com/Imbad0202)) — creator of ARS
+- Original repository: [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)
+- License: CC BY-NC 4.0 (non-commercial)
